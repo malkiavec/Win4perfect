@@ -39,7 +39,7 @@ class LotteryDataHandler:
         self.n_digits = n_digits
 
     @st.cache_data(show_spinner=False)
-    def get_processed_data(_self, use_api: bool, uploaded_csv: Optional[io.BytesIO]) -> pd.DataFrame:
+    def get_processed_data(self, use_api: bool, uploaded_csv: Optional[io.BytesIO]) -> pd.DataFrame:
         if use_api:
             df = self.api.fetch_recent_draws(limit=800)
         else:
